@@ -28,7 +28,7 @@ class TestPostFromAlexa(BaseTestCase):
             }
         }
 
-        response = self.app.post_json('/', request_body)
+        response = self.app.post_json('/commands', request_body)
         self.assertEqual(response.status, "200 OK")
         self.assertNotEqual(response.json_body, None)
         self.assertNotEqual(response.json_body["response"]["outputSpeech"]["text"], "")
@@ -58,7 +58,7 @@ class TestPostFromAlexa(BaseTestCase):
             }
         }
 
-        response = self.app.post_json('/', request_body)
+        response = self.app.post_json('/commands', request_body)
         self.assertEqual(response.status, "200 OK")
         self.assertNotEqual(response.json_body, None)
         self.assertNotEqual(response.json_body["response"]["outputSpeech"]["text"], "")
